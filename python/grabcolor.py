@@ -25,10 +25,10 @@ fluorescent = cList.getFluorescent()
 all = cList.getAll()
 
 
-for color in blueViolet:
+for color in all:
     restTimer = random.uniform(1,2)
     time.sleep(restTimer)
-    url = 'https://copic.jp/images/color/Sample_'color.trim()+'@2x.jpg'
+    url = 'https://copic.jp/images/color/Sample_'+color+'@2x.jpg'
     response = requests.get(url).content
-    with open('../colors/'+color.trim()+'.jpg', 'wb') as out_file:
+    with open('../colors/'+color+'.jpg', 'wb') as out_file:
         out_file.write(response)
